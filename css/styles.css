@@ -792,6 +792,10 @@ body {
 
   }
 
+#order_preview {
+  padding: 70px;
+}
+
 /* **** Section 9 - Footer **** */
 
 #footer {

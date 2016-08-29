@@ -138,29 +138,29 @@
 							<h3>Ingredients</h3>
 						</header>
 						<p>Each pizza comes with a roasted red pepper and tomato sauce and cheese. Additional ingredients below:</p>
-            <form>
+            <form id ="orderForm">
               <fieldset class="form-group">
                 <div id="ingredients" class="radio">
                   <label>
-                    <input type="radio" id="pepperoni" value="option1">
+                    <input type="radio" name="pepperoni" value="option1">
                     Pepperoni
                   </label>
                 </div>
                 <div class="radio">
                   <label>
-                    <input type="radio" id="sausage" value="option2">
+                    <input type="radio" name="sausage" value="option2">
                     Sausage
                   </label>
                 </div>
                 <div class="radio">
                   <label>
-                    <input type="radio" id="basil" value="option3">
+                    <input type="radio" name="basil" value="option3">
                     Basil
                   </label>
                 </div>
                 <div class="radio">
                   <label>
-                    <input type="radio" id="mushrooms" value="option3">
+                    <input type="radio" name="mushrooms" value="option3">
                     Mushrooms
                   </label>
                 </div>
@@ -189,6 +189,14 @@
 					</div>
 				</article>
 			</div>
+      <br>
+      <article id="order_preview">
+        <h3>Please review your order</h3>
+        <p id="selected_size"></p>
+        <p id="selected_ingredients"></p>
+        <p id="selected_qty"></p>
+        <p id="order_total"></p>
+      </article>
 		</section>
 
 		<section id="footer">
@@ -214,6 +222,24 @@
 				</div>
 			</div>
 		</section>
-
+    <!-- <button id="launch_modal" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#order_modal">Place Order</button>
+    <div class="modal fade" id="order_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title"><span class="name"></span>, please review your order below.</h4>
+          </div>
+          <div class="modal-body">
+            <div id="order_display">
+              ********** Content Here **********
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Purchase</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
 	</body>
 </html>
