@@ -10,27 +10,24 @@
     <title></title>
   </head>
   <body>
-
 		<header id="header">
 			<div class="inner">
-				<a href="#" class="logo">the pizzeria</a>
+				<a href="https://downingforce.github.io/pizzeria/" class="logo">the pizzeria</a>
 				<nav id="nav">
-					<a href="#">About</a>
-					<a href="#">New Order</a>
+					<a href="#one">About</a>
+					<a href="#three">New Order</a>
 				</nav>
 			</div>
 		</header>
-
 		<section id="banner">
 			<div class="inner">
 				<h1>The pizzeria: <span>An oven fired revolution<br />
 				place your order</span></h1>
 				<ul class="actions">
-					<li><a href="#" class="button alt">Get Started</a></li>
+					<li><a href="#three" class="button alt">Get Started</a></li>
 				</ul>
 			</div>
 		</section>
-
 		<section id="one">
 			<div class="inner">
 				<header>
@@ -42,12 +39,10 @@
 				</ul>
 			</div>
 		</section>
-
 		<section id="two">
 			<div class="inner">
 			</div>
 		</section>
-
     <section id="menu">
 			<h3>Menu</h3>
 			<div class="table-wrapper">
@@ -99,7 +94,6 @@
 				</table>
 			</div>
     </section>
-
 		<section id="three">
 			<div class="inner">
 				<article>
@@ -112,6 +106,7 @@
               <fieldset class="form-group">
                 <div class="form-group">
                   <select class="form-control" id="size">
+                    <option></option>
                     <option>Small</option>
                     <option>Medium</option>
                     <option>Large</option>
@@ -131,6 +126,7 @@
               <fieldset class="form-group">
                 <div class="form-group">
                   <select class="form-control" id="ingredients">
+                    <option></option>
                     <option>Pepperoni</option>
                     <option>Sausage</option>
                     <option>Basil</option>
@@ -149,6 +145,7 @@
 						<p>Select how many pizzas would you like. Limit 5 pizzas per online order. Call for larger orders.</p>
             <div class="form-group">
               <select class="form-control" id="quantity">
+                <option></option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -170,11 +167,10 @@
         <p id="selected_qty">Quntity: </p>
         <p id="order_total"> Total: $</p>
         <ul class="actions">
-          <li><a href="#" class="button alt">Order</a></li>
+          <li><a href="https://downingforce.github.io/pizzeria/" class="button alt">Order</a></li>
         </ul>
       </article>
 		</section>
-
 		<section id="footer">
 			<div class="inner">
 				<header>
@@ -190,7 +186,24 @@
 						<input type="text" name="email" id="email" />
 					</div>
 					<ul class="actions">
-						<li><input type="submit" value="Join" class="alt" /></li>
+						<button id="launch_modal" type="click" class="btn btn-primary" data-toggle="modal" data-target="#order_modal">Join</button>
+            <div class="modal fade" id="order_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  </div>
+                  <div class="modal-body">
+                    <div id="order_display">
+                      <h3 class="modal-title">Thanks for joining The Revolution!</h3>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 					</ul>
 				</form>
 				<div class="copyright">
@@ -198,24 +211,5 @@
 				</div>
 			</div>
 		</section>
-    <!-- <button id="launch_modal" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#order_modal">Place Order</button>
-    <div class="modal fade" id="order_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title"><span class="name"></span>, please review your order below.</h4>
-          </div>
-          <div class="modal-body">
-            <div id="order_display">
-              ********** Content Here **********
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Purchase</button>
-          </div>
-        </div>
-      </div>
-    </div> -->
 	</body>
 </html>

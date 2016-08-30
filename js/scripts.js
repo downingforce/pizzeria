@@ -40,7 +40,6 @@ Orders.prototype.price = function (size, ingredient, quantity) {
   this.total = totalPrice;
 };
 
-
 // User Interface (font-end) Logic
 
 $(document).ready(function() {
