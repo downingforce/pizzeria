@@ -11,13 +11,11 @@ _A web application where a user can choose one or more individual toppings (chee
 
 ## Specifications
 
-| Behavior                | Input Example           | Output Example         |
-| ----------------------- |:-----------------------:| ----------------------:|
-|                         |                         |                        |
-|                         |                         |                        |
-|                         |                         |                        |
-|                         |                         |                        |
-|                         |                         |                        |
+| Behavior                                        | Input Example           | Output Example         |
+| ----------------------------------------------- |:-----------------------:| ----------------------:|
+| Takes size input and adds cost to a total       | Size Selected: Small    | Total = Total + 7.99   |
+| Takes ingredient input and adds cost to a total | Size Selected: Basil    | Total = Total + 1.99   |
+| Total cost is the multiplied by quantity        | Qty Selected: 2         | Total = Total x 2      |
 
 ## Setup/Installation Requirements
 
