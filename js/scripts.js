@@ -17,17 +17,24 @@ var menu = {
   mushrooms: 1.99
 };
 
-Orders.prototype.price = function (size, ingredients, quantity) {
+Orders.prototype.price = function (size, ingredient, quantity) {
   var totalPrice = 0;
-  if (size === "small") {
+  if (size === "Small") {
     totalPrice += menu.small;
-  } else if (size === "medium") {
+  } else if (size === "Medium") {
     totalPrice += menu.medium;
-  } else if (size === "large") {
+  } else if (size === "Large") {
     totalPrice += menu.large;
-  };
-  for (i = 0; i < this.ingredients.length; i++) {
-    total += this.ingredients[i];
+  }
+
+  if (ingredient === "Pepperoni") {
+    totalPrice += menu.pepperoni;
+  } else if (ingredient === "Sausage") {
+    totalPrice += menu.sausage;
+  } else if (ingredient === "Basil") {
+    totalPrice += menu.basil;
+  } else if (ingredient === "Mushrooms") {
+    totalPrice += menu.mushrooms;
   };
   totalPrice *= quantity;
   this.total = totalPrice;
@@ -36,41 +43,26 @@ Orders.prototype.price = function (size, ingredients, quantity) {
 
 // User Interface (font-end) Logic
 
-
 $(document).ready(function() {
-  $("div#quantity").submit(function(event) {
 
-    $("#order_preview").hide();
+  $("#order_preview").hide();
 
-    var userSize = $("input[name=size]:checked").val();
+  $("#order_init").click(function(event) {
+
+    var userSize = $("#size option:selected").val();
     var userQty = $("#quantity option:selected").val();
+    var ingredient = $("#ingredients option:selected").val();
 
-    var customerIngredients = [];
-    var totalIngredients = 4;
+    var daOrder = new Orders (userSize, ingredient, userQty);
 
-    var ingredient1 = $("input[name=pepperoni]:checked").val();
-    var ingredient2 = $("input[name=sausage]:checked").val();
-    var ingredient3 = $("input[name=basil]:checked").val();
-    var ingredient4 = $("input[name=mushrooms]:checked").val();
+    daOrder.price(userSize, ingredient, userQty);
 
-    for (var i = 0; i < totalIngredients; i++) {
-      if (document.getElementById(pepperoni).checked) {
-          customerIngredients.push(menu.pepperoni);
-      } else if (document.getElementById(sausage).checked) {
-          customerIngredients.push(menu.sausage);
-      } else if (document.getElementById(basil).checked) {
-          customerIngredients.push(menu.basil);
-      } else if (document.getElementById(mushrooms).checked) {
-          customerIngredients.push(menu.mushrooms);
-      }
-    };
+    console.log(userSize);
 
-    var daOrder = new Orders (userSize, customerIngredients, userQty);
-
-    $("#selected_size").text(daOrder.pieSize);
-    $("#selected_ingredients").text();
-    $("#selected_qty").text(daOrder.quantity);
-    $("#order_total").text(daOrder.total);
+    $("#selected_size").append(daOrder.pieSize);
+    $("#selected_ingredients").append(daOrder.ingredients);
+    $("#selected_qty").append(daOrder.quantity);
+    $("#order_total").append(daOrder.total);
 
     $("#order_preview").show();
 
